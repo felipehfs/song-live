@@ -6,6 +6,6 @@ O songlive é uma simples api de streaming de aúdio. Com o foco em integração
 
 | Método | URI                      | Descrição                        |
 | ------ | ------------------------ | -------------------------------- |
-| GET    | localhot:3000/songs/     | Retorna um json todas as músicas |
-| GET    | localhot:3000/songs/:id  | Busca uma música pelo seu id     |
-| DELETE | localhot:3000/songs/:id  | Remove uma música pelo seu id    |
+| GET    | localhost:3000/songs/     | Retorna um json todas as músicas |
+| GET    | localhost:3000/songs/:id  | Busca uma música pelo seu id     |
+| DELETE | localhost:3000/songs/:id  | Remove uma música pelo seu id    |
