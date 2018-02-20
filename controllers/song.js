@@ -1,7 +1,7 @@
 var Song = require('../models/song'),
     formidable = require('formidable'),
     fs = require('fs');
-    
+
 
 exports.create = function(req, res){
 
@@ -16,16 +16,25 @@ exports.create = function(req, res){
         audio.file = files.file.path
         var newSong = new  Song(audio);
         // Salvando as informações no banco de dados
-        newSong.save(audio, (err, data) => { 
+        newSong.save(audio, (err, data) => {
             if(err) {
-                res.status(404).send(err); 
+                res.status(404).send(err);
             } else {
-                res.json(data);
+                res.status(201).json(data);
             }
         });
     });
 }
 
+// Retorna todas músicas já guardadas no servidor
+exports.retrieve = function(req, res){
+  Song.find({}, function (err, data) {
+    if(err){
+      rs.status(500).send(err);
+    }
+    res.json(data);
+  });
+}
 
 // Busca o arquivo pelo seu id
 exports.find = function(req, res){
@@ -46,13 +55,13 @@ exports.find = function(req, res){
         } else {
             res.status(404).json({status: "Not found"});
         }
-       
+
     });
-	
+
 }
 
 exports.remove = function(req, res){
-    Song.findById(req.params.id, function (err, data) { 
+    Song.findById(req.params.id, function (err, data) {
         if(err){
             throw err;
         }

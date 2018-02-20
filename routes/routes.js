@@ -4,9 +4,7 @@ var express = require("express"),
 
 router.route('/')
 .post(songCtrl.create)
-.get(function(req, res) {
-	res.send("Hello World");		
-});
+.get(songCtrl.retrieve);
 
 router.get("/:id", songCtrl.find);
 router.delete("/:id", songCtrl.remove);
