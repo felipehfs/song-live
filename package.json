@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "",
   "license": "ISC",
@@ -12,9 +14,11 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "formidable": "^1.1.1",
-    "mongoose": "^5.0.6"
+    "mongoose": "^5.0.6",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "nodemon": "^1.15.0"
-  }
+  },
+  "snyk": true
 }
